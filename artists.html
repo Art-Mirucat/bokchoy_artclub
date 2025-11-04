@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画师列表 - 小白菜画社</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="artist-list-page">
+    <header>
+        <div class="container">
+            <div class="logo">小白菜画社</div>
+            <nav>
+                <div class="menu-toggle" id="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="artists.html" class="active">画师</a></li>
+                    <li><a href="events.html">活动/公告</a></li>
+                    <li><a href="contact.html">联系</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="artist-showcase">
+                <h2>我们的画师</h2>
+                <div class="filter-container">
+                    <div id="tag-filters" class="tag-filters">
+                        <!-- 标签筛选按钮将由 JavaScript 动态插入 -->
+                    </div>
+                </div>
+                <div id="artist-list">
+                    <!-- 画师卡片将由 JavaScript 动态插入 -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 小白菜画社. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
