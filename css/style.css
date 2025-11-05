@@ -212,7 +212,7 @@ footer {
     }
 
     #hero h1 {
-        font-size: 8%; /* 百分比單位縮小過大的標題字體 */
+        font-size: 75%; /* 百分比單位縮小過大的標題字體 */
     }
 
     #hero p {
