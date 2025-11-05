@@ -136,13 +136,13 @@ header .logo {
 }
 
 #hero h1 {
-    font-size: 55px;
+    font-size: 250%;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px #143116;
 }
 
 #hero p {
-    font-size: 20px;
+    font-size: 125%;
     text-shadow: 1px 1px 2px #143116;
 }
 
