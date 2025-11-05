@@ -207,8 +207,12 @@ footer {
         margin: 0 auto;
     }
 
+    #hero {
+        padding: 0 5%; /* 百分比單位確保不同設備下一致的左右間距 */
+    }
+
     #hero h1 {
-        font-size: 40px;
+        font-size: 8%; /* 百分比單位縮小過大的標題字體 */
     }
 
     #hero p {
