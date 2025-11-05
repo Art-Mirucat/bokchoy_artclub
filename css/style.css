@@ -24,34 +24,20 @@ body {
 header {
     background: #a6f0a6; /* 浅绿色 */
     color: #fff;
-    padding-top: 30px;
+    padding: 15px 20px; /* 上下均等内边距 */
     min-height: 70px;
     border-bottom: #dfffa5 3px solid; /* 草坪绿 */
     position: relative; /* 为绝对定位的菜单按钮提供参考 */
-}
-
-header a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
+    width: 100%;
+    display: flex; /* 启用flex布局 */
+    justify-content: space-between;
+    align-items: center; /* 垂直居中对齐子元素 */
 }
 
 header .logo {
-    float: left;
     font-size: 24px;
     font-weight: bold;
-}
-
-header nav {
-    float: right;
-    margin-top: 10px;
-}
-
-header nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    margin: 0; /* 重置默认边距 */
 }
 
 /* 汉堡菜单图标 */
@@ -64,7 +50,8 @@ header nav ul {
     cursor: pointer;
     position: absolute;
     right: 20px;
-    top: 35px;
+    top: 50%; /* 垂直居中基准点 */
+    transform: translateY(-50%); /* 精确垂直居中 */
     z-index: 1100; /* 确保在导航列表之上 */
 }
 
