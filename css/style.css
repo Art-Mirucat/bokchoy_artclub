@@ -6,13 +6,14 @@ body {
     color: #333;
     line-height: 1.6;
     overflow-x: hidden; /* 防止水平滚动 */
+    max-width: 100%;
 }
 
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
-    padding: 0 20px;
+    padding: 30px;
 }
 
 /* 页头 */
@@ -107,6 +108,7 @@ header nav ul {
 
 .nav-list li {
     text-align: center;
+    
 }
 
 .nav-list li a {
@@ -147,11 +149,15 @@ header nav ul {
     font-size: 55px;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px #143116;
+    word-break: break-word; /* 強制長詞換行 */
+    overflow-wrap: break-word; /* 兼容性更好 */
 }
 
 #hero p {
     font-size: 20px;
     text-shadow: 1px 1px 2px #143116;
+    word-break: break-word; /* 強制長詞換行 */
+    overflow-wrap: break-word; /* 兼容性更好 */
 }
 
 /* Sections */
@@ -164,6 +170,8 @@ section h2 {
     margin-bottom: 30px;
     font-size: 32px;
     color: #476b2f; /* 暗橄榄绿 */
+    word-break: break-word; /* 強制長詞換行 */
+    overflow-wrap: break-word; /* 兼容性更好 */
 }
 
 section h3 {
@@ -171,6 +179,8 @@ section h3 {
     font-size: 25px;
     margin-bottom: 20px;
     color: #476b2f; /* 暗橄榄绿 */
+    word-break: break-word; /* 強制長詞換行 */
+    overflow-wrap: break-word; /* 兼容性更好 */
 }
 
 /* 页脚 */
