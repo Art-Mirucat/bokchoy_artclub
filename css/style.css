@@ -136,7 +136,7 @@ header .logo {
 }
 
 #hero h1 {
-    font-size: 250%;
+    font-size: 200%;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px #143116;
 }
@@ -208,7 +208,7 @@ footer {
     }
 
     #hero h1 {
-        font-size: 50%; /* 進一步縮小標題字體 */
+        font-size: 80%; /* 進一步縮小標題字體 */
     }
 
     #hero p {
