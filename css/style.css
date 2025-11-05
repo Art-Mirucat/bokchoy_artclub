@@ -5,6 +5,7 @@ body {
     background-color: #ffffe8; /* 象牙白，作为浅黄色的基调 */
     color: #333;
     line-height: 1.6;
+    overflow-x: hidden; /* 防止水平滚动 */
 }
 
 .container {
