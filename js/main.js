@@ -36,7 +36,13 @@ function renderArtists(page = 1, filterTags = []) {
                 <p class="artist-id">编号: ${artist.id}</p>
                 <p class="artist-bio">${artist.bio}</p>
                 <div class="artist-works-preview">
-                    ${artist.businesses.slice(0, 3).map(biz => `<img src="${biz.images[0]}" alt="${biz.title} 预览" class="work-preview-thumb">`).join('')}
+                    ${artist.businesses.slice(0, 3).map(biz => {
+                        const src = biz.images[0];
+                        const isVideo = /\.mp4$/i.test(src);
+                        return isVideo
+                            ? `<video src="${src}" class="work-preview-thumb" loop autoplay muted playsinline></video>`
+                            : `<img src="${src}" alt="${biz.title} 预览" class="work-preview-thumb">`;
+                    }).join('')}
                 </div>
                 <a href="artist-detail.html?id=${artist.id}" class="view-detail-btn">查看详情</a>
             </div>

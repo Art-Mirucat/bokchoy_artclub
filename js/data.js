@@ -113,7 +113,7 @@ const artistsData = [
                 title: '仿饼干人立绘',
                 priceRange: '￥16r',
                 description: '',
-                images: ['images/artists/artist4_work7.jpg', 'images/artists/artist4_work8.jpg'],
+                images: ['images/artists/artist4_work7.jpg'],
                 tags: ['#绘画', '#饼干人', '#立绘']
             },
         ],
