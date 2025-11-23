@@ -242,7 +242,7 @@ const artistsData = [
         id:73,
         name: '老荷',
         avatar: 'images/artists/artist73_avatar.jpg',
-        bio: '',
+        bio: '画师',
         businessScope: '业务：绘画',
         businesses: [
             {
