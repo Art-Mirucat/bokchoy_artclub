@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>画师列表 - 小白菜画社</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body class="artist-list-page">
     <header>
@@ -19,7 +20,7 @@
                 <ul class="nav-list" id="nav-list">
                     <li><a href="index.html">首页</a></li>
                     <li><a href="artists.html" class="active">画师</a></li>
-                    <li><a href="events.html">活动/公告</a></li>
+                    <li><a href="events.html">公告/活动</a></li>
                     <li><a href="contact.html">联系</a></li>
                 </ul>
             </nav>
@@ -30,13 +31,72 @@
         <div class="container">
             <section id="artist-showcase">
                 <h2>我们的画师</h2>
-                <div class="filter-container">
-                    <div id="tag-filters" class="tag-filters">
-                        <!-- 标签筛选按钮将由 JavaScript 动态插入 -->
+                <div id="filter-system">
+                    <div id="filter-bar">
+                        <div id="selected-tags-container">
+                            <!-- Selected tags will be displayed here -->
+                        </div>
+                        <button id="filter-toggle-button" class="icon-button">
+                            <i class="fas fa-filter"></i>
+                        </button>
+                    </div>
+                    <!-- 仅展示筛选面板这一段 -->
+                    <div id="filter-panel" class="hidden">
+                        <div class="filter-category">
+                            <h3>业务</h3>
+                            <div class="tags-container" data-category="business">
+                                <!-- Tags will be rendered here by JavaScript -->
+                            </div>
+                        </div>
+                        <!-- 初始隐藏子分类：画风 -->
+                        <div class="filter-category hidden">
+                            <h3>画风</h3>
+                            <div class="tags-container" data-category="art-style">
+                                <!-- Tags will be rendered here by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <!-- 初始隐藏子分类：绘画 -->
+                        <div class="filter-category hidden">
+                            <h3>绘画</h3>
+                            <div class="tags-container" data-category="painting">
+                                <!-- Tags will be rendered here by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <!-- 初始隐藏子分类：材质（手作） -->
+                        <div class="filter-category hidden">
+                            <h3>材料</h3>
+                            <div class="tags-container" data-category="material">
+                                <!-- Tags will be rendered here by JavaScript -->
+                            </div>
+                        </div>
+
+                        <!-- 初始隐藏子分类：手作分类 -->
+                        <div class="filter-category hidden">
+                            <h3>手作</h3>
+                            <div class="tags-container" data-category="handmade">
+                                <!-- Tags will be rendered here by JavaScript -->
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div id="artist-list">
                     <!-- 画师卡片将由 JavaScript 动态插入 -->
+                </div>
+                <div class="pagination-container">
+                    <div class="page-selector">
+                        <label for="page-dropdown">跳至:</label>
+                        <select id="page-dropdown"></select>
+                    </div>
+                    
+                    <div class="pagination-controls">
+                        <button id="prev-page" class="pagination-button">&laquo; 上一页</button>
+                        <div id="page-numbers" class="page-numbers">
+                            <!-- 页码将由 JavaScript 动态插入 -->
+                        </div>
+                        <button id="next-page" class="pagination-button">下一页 &raquo;</button>
+                    </div>
                 </div>
             </section>
         </div>
@@ -44,7 +104,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 小白菜画社. 保留所有权利。</p>
+            <p>&copy; 2025 小白菜画社. 保留所有权利. 本网站由咪噜喵MiruCat制作</p>
         </div>
     </footer>
 
