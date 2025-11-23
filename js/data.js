@@ -97,7 +97,7 @@ const artistsData = [
         businesses: [
             {
                 title: '小动物场景涂鸦',
-                priceRange: '￥12 - ￥25',
+                priceRange: '￥12r - ￥25r',
                 description: '单人：12r/p &emsp; &emsp; 双人：25r/p',
                 images: ['images/artists/artist4_work1.jpg', 'images/artists/artist4_work2.jpg', 'images/artists/artist4_work3.jpg', 'images/artists/artist4_work4.jpg'],
                 tags: ['#绘画', '#Q版', '#场景涂鸦', '#动物']
@@ -131,11 +131,53 @@ const artistsData = [
         businesses: [
             {
                 title: 'QQ人组合页',
-                priceRange: '￥35',
+                priceRange: '￥35r',
                 description: '',
                 images: ['images/artists/artist16_work1.jpg'],
                 tags: ['#绘画', '#Q版', '#组合页']
             }
+        ],
+        social: {
+            twitter: '#',
+            behance: '#'
+        }
+    },
+    {
+        id:20,
+        name: '咪噜喵',
+        avatar: 'images/artists/artist20_avatar.jpg',
+        bio: '画师/拆分师/Live2D建模师/游戏网站编程师',
+        businessScope: '业务：绘画/拆分/Live2D/游戏/网站',
+        businesses: [
+            {
+                title: '对称QQ头',
+                priceRange: '￥8r',
+                description: '●复杂设+2-6r',
+                images: ['images/artists/artist20_work1.jpg', 'images/artists/artist20_work2.jpg', 'images/artists/artist20_work3.jpg'],
+                tags: ['#绘画', '#Q版', '#头像']
+            }
+            ,
+            {
+                title: '动图拆分',
+                priceRange: '￥30r+ - ￥50r+',
+                description: '●粗拆：30r+&emsp;&emsp;&emsp;&emsp;●精拆：50r+\n●价格根据复杂度浮动',
+                images: ['images/artists/artist20_work4.jpg'],
+                tags: ['#拆分']
+            },
+            {
+                title: 'Live2D动图建模',
+                priceRange: '￥28r+ - ￥40r+',
+                description: '●仅眨眼+头发飘动（包拆分）：28r | 根据情况添加z轴，默认果冻眼，嘴巴变形+4r\n●整张图片：40r+\n●如无特殊要求动画根据图片来做，包含基本物理效果\n●价格根据复杂度浮动，约包拆分，拆分价可打八折',
+                images: ['images/artists/artist20_work5.mp4', 'images/artists/artist20_work6.mp4', 'images/artists/artist20_work7.mp4'],
+                tags: ['#Live2D', '#动图']
+            },
+            // {
+            //     title: 'Live2D皮套',
+            //     priceRange: '￥260r+ - ￥1200r+',
+            //     description: '●',
+            //     images: ['images/artists/artist20_work6.jpg'],
+            //     tags: ['#Live2D', '#皮套']
+            // },
         ],
         social: {
             twitter: '#',
@@ -165,7 +207,7 @@ const artistsData = [
             },
             {
                 title: '水印代打',
-                priceRange: '￥1-2r',
+                priceRange: '￥1r - ￥2r',
                 description: '工期：24小时&emsp;&emsp;&emsp;&emsp;自带：1r&emsp;不自带：2r',
                 images: ['images/artists/artist35_work7.jpg', 'images/artists/artist35_work8.jpg', 'images/artists/artist35_work9.jpg'],
                 tags: ['#水印代打']
@@ -239,21 +281,21 @@ const artistsData = [
         businesses: [
             {
                 title: '大型摆件',
-                priceRange: '￥10-20r',
+                priceRange: '￥10r - ￥20r',
                 description: '满40邮费半包，满50邮费全包，满65可以减5r，满85减8r，满100减10，价格非绝对，不同产品会有不同偏差',
                 images: ['images/artists/artist106_work1.jpg', 'images/artists/artist106_work2.jpg', 'images/artists/artist106_work3.jpg', 'images/artists/artist106_work4.jpg', 'images/artists/artist106_work5.jpg', 'images/artists/artist106_work6.jpg', 'images/artists/artist106_work7.jpg'],
                 tags: ['#手作', '#动物']
             },
             {
                 title: '可定制扭扭棒花',
-                priceRange: '￥13-25r',
+                priceRange: '￥13r - ￥25r',
                 description: '满40邮费半包，满50邮费全包，满65可以减5r，满85减8r，满100减10，价格非绝对，不同产品会有不同偏差',
                 images: ['images/artists/artist106_work8.jpg', 'images/artists/artist106_work9.jpg'],
                 tags: ['#手作', '#扭扭棒']
             },
             {
                 title: '小型摆件/发卡',
-                priceRange: '￥4-8r',
+                priceRange: '￥4r - ￥8r',
                 description: '满40邮费半包，满50邮费全包，满65可以减5r，满85减8r，满100减10，价格非绝对，不同产品会有不同偏差',
                 images: ['images/artists/artist106_work10.jpg', 'images/artists/artist106_work11.jpg', 'images/artists/artist106_work12.jpg', 'images/artists/artist106_work13.jpg', 'images/artists/artist106_work14.jpg', 'images/artists/artist106_work15.jpg', 'images/artists/artist106_work16.jpg', 'images/artists/artist106_work17.jpg', 'images/artists/artist106_work18.jpg', 'images/artists/artist106_work19.jpg', 'images/artists/artist106_work20.jpg'],
                 tags: ['#手作', '#扭扭棒', '#发卡']
@@ -273,7 +315,7 @@ const artistsData = [
         businesses: [
             {
                 title: 'Q版不织布',
-                priceRange: '￥25r+ - 65r+',
+                priceRange: '￥25r+ - ￥65r+',
                 description: '●大头：25r+&emsp;&emsp;&emsp;●半身：45r+&emsp;&emsp;&emsp;●全身：65r+\n●加急：x2&emsp;&emsp;&emsp;●工期：1-7天\n●以上均为自带图纸价，未拆分图需+1-6r\n●发货：满68包邮，偏远需补邮确认成品后发货<br></br>●付款方式：定金+尾款(非本人原因导致订单无法进行，定金收取后一概不退，一个制品定金18r)\n●流程：数量+18r定金排单-成品 -付尾款-打包 -寄出结束【成图出来当天，五天内没回复，定制商品（非oc制品）当现货掉落】\n●手工制作无法做到完全一致，默认微瑕，不同光线和场景下存在色差，以收到实物为准。完美主义者请绕道，不接柜子等争议大的作品',
                 images: ['images/artists/artist109_work1.jpg'],
                 tags: ['#手作', '#Q版手作', '#不织布']

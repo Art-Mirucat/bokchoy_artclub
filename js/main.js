@@ -137,11 +137,17 @@ function renderArtistDetail() {
                     <p class="business-description">${business.description}</p>
                     <div class="business-gallery" data-business-index="${businessIndex}">
                         <div class="gallery-images-wrapper">
-                            ${business.images.map((img, index) => `
-                                <div class="gallery-image-container ${index < 2 ? 'active' : ''}" data-index="${index}">
-                                    <img src="${img}" alt="${business.title} 预览" class="gallery-image">
-                                </div>
-                            `).join('')}
+                            ${business.images.map((mediaSrc, index) => {
+                                const isVideo = /\.mp4$/i.test(mediaSrc);
+                                const mediaTag = isVideo
+                                    ? `<video src="${mediaSrc}" class="gallery-image" loop autoplay muted playsinline></video>`
+                                    : `<img src="${mediaSrc}" alt="${business.title} 预览" class="gallery-image">`;
+                                return `
+                                    <div class="gallery-image-container ${index < 2 ? 'active' : ''}" data-index="${index}">
+                                        ${mediaTag}
+                                    </div>
+                                `;
+                            }).join('')}
                         </div>
                         <button class="gallery-arrow left-arrow" style="display: ${business.images.length <= 2 ? 'none' : 'block'};">&lt;</button>
                         <button class="gallery-arrow right-arrow" style="display: ${business.images.length <= 2 ? 'none' : 'block'};">&gt;</button>
@@ -211,11 +217,14 @@ function renderArtistDetail() {
                 showImages(currentStartIndex);
             });
 
-            // 点击图片查看原图 - 使用Lightbox
-            imageContainers.forEach((container, index) => {
+            // 点击图片查看原图 - 使用Lightbox（修复索引错误）
+            imageContainers.forEach((container) => {
                 container.addEventListener('click', () => {
-                    const actualImageIndex = (currentStartIndex + index) % totalImages;
-                    openLightbox(business.images[actualImageIndex]);
+                    // 直接使用容器的 data-index，避免与 currentStartIndex 叠加导致错误
+                    const imageIndex = parseInt(container.dataset.index, 10);
+                    if (!Number.isNaN(imageIndex) && business.images[imageIndex]) {
+                        openLightbox(business.images[imageIndex]);
+                    }
                 });
             });
 
@@ -229,25 +238,47 @@ function renderArtistDetail() {
             <div id="lightbox-content">
                 <span id="lightbox-close">&times;</span>
                 <img id="lightbox-image" src="" alt="Full size image">
+                <video id="lightbox-video" src="" controls loop></video>
             </div>
         `;
         document.body.appendChild(lightboxOverlay);
 
         const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxVideo = document.getElementById('lightbox-video');
         const lightboxClose = document.getElementById('lightbox-close');
 
-        function openLightbox(imageSrc) {
-            lightboxImage.src = imageSrc;
-            lightboxOverlay.style.display = 'flex';
+        function openLightbox(mediaSrc) {
+            const isVideo = /\.mp4$/i.test(mediaSrc);
+            if (isVideo) {
+                lightboxImage.style.display = 'none';
+                lightboxVideo.style.display = 'block';
+                lightboxVideo.src = mediaSrc;
+                lightboxOverlay.style.display = 'flex';
+                // 用户点击触发，尝试播放（不强制静音）
+                lightboxVideo.play().catch(() => {});
+            } else {
+                lightboxVideo.pause();
+                lightboxVideo.style.display = 'none';
+                lightboxImage.style.display = 'block';
+                lightboxImage.src = mediaSrc;
+                lightboxOverlay.style.display = 'flex';
+            }
         }
 
         lightboxClose.addEventListener('click', () => {
             lightboxOverlay.style.display = 'none';
+            // 关闭时停止视频播放
+            if (lightboxVideo) {
+                lightboxVideo.pause();
+            }
         });
 
         lightboxOverlay.addEventListener('click', (e) => {
             if (e.target === lightboxOverlay) {
                 lightboxOverlay.style.display = 'none';
+                if (lightboxVideo) {
+                    lightboxVideo.pause();
+                }
             }
         });
 
@@ -265,6 +296,7 @@ const filterConfig = {
     // 业务 -> 子分类(data-category)
     subMap: {
         "绘画": ["art-style", "imitate-style", "painting"],
+        "Live2D": [],
         "手作": ["material", "handmade"],
         // 其他业务如需子分类，后续可在此扩展
     },
@@ -275,6 +307,7 @@ const filterConfig = {
         "painting": ["头像", "胸像", "立绘", "组合页", "插画", "服设", '表情包', '场景涂鸦', '动物'],
         "material": ["不织布", "扭扭棒"],
         "handmade": ["正比手作", "Q版手作", "动物", "发卡", "挂件"],
+        "Live2D": ["动图", "皮套"]
     }
 };
 
